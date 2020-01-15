@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+<div class="container show-container">
+  <div class="card mb-3">
+    <img src="<%= blog.image %>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%=blog.title %></h5>
+      <p class="card-text"><%- blog.body %></p>
+      <p class="card-text">
+        <small class="text-muted"
+          ><%= moment(blog.createdAt).fromNow() %></small
+        >
+      </p>
+    </div>
+    <div class="buttons">
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+        <button onclick="myFunction()" class="btn btn-danger">Delete</button>
+      </form>
+      <a class="btn btn-info" href="/blogs/<%= blog._id %>/edit"> Edit</a>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer'); -%>

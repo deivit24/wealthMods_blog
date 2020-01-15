@@ -1,0 +1,43 @@
+<%- include('partials/header'); -%>
+<div class="container box-shadow">
+  <h1>
+    New Blog
+  </h1>
+  <form action="/blogs" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label><strong>Title</strong></label>
+      <input
+        type="text"
+        class="form-control"
+        name="blog[title]"
+        placeholder="title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="image"><strong>Image</strong></label>
+      <input
+        type="file"
+        id="image"
+        class="form-control"
+        name="image"
+        accept="image/*"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label><strong>Blog Content</strong></label>
+      <textarea
+        class="form-control"
+        name="blog[body]"
+        rows="3"
+        placeholder="Start writing post"
+        required
+      >
+      </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include('partials/footer'); -%>
